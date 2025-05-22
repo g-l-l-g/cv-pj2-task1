@@ -1,8 +1,8 @@
 # cv-pj2-task1
 Caltech-101 图像分类项目
 
-== 概述 ==
-本项目使用PyTorch实现Caltech-101数据集的图像分类，支持对预训练模型（ResNet-18/AlexNet）进行微调或从头训练，包含超参数配置和实验跟踪功能。
+## == 概述 ==
+- 本项目使用PyTorch实现Caltech-101数据集的图像分类，支持对预训练模型（ResNet-18/AlexNet）进行微调或从头训练，包含超参数配置和实验跟踪功能。
 
 主要特性：
 - 支持训练集/验证集/测试集划分
@@ -11,7 +11,7 @@ Caltech-101 图像分类项目
 - 模型检查点保存与最佳模型选择
 - 差异化的微调学习率设置
 
-== 项目结构 ==
+## == 项目结构 ==
 ```
 caltech-101-classification/
 ├── caltech101_dataprep/          # 数据预处理模块
@@ -39,15 +39,8 @@ caltech-101-classification/
 ├── main_scratch.py               # 从头训练入口
 └── README.md
 ```
-== 安装步骤 ==
-1. 克隆仓库：
-git clone https://github.com/yourusername/caltech-101-classification.git
-cd caltech-101-classification
 
-2. 安装依赖：
-pip install torch torchvision pandas matplotlib seaborn tensorboard
-
-== 使用说明 ==
+## == 使用说明 ==
 1. 准备数据集：
 - 从官网下载Caltech-101数据集
 - 修改`caltech101_dataprep/config.py `中的路径：
@@ -60,7 +53,7 @@ pip install torch torchvision pandas matplotlib seaborn tensorboard
 - 从头开始训练：
   `python caltech101_classification/main_scratch.py`
 
-== 配置调整 ==
+## == 配置调整 ==
 修改 config_train.py 文件：
 - MODEL_NAME: 选择"resnet18"或"alexnet"
 - EPOCHS: 训练轮数（默认15）
@@ -68,11 +61,11 @@ pip install torch torchvision pandas matplotlib seaborn tensorboard
 - 学习率：微调层1e-5，新层1e-3
 - 优化器：Adam/SGD可选
 
-== 训练监控 ==
+## == 训练监控 ==
 使用TensorBoard查看指标：
 tensorboard --logdir runs/
 
-== 注意事项 ==
+## == 注意事项 ==
 1. 首次运行会自动下载预训练权重到D:/.../model_weights目录
 2. 显存不足时可减小BATCH_SIZE值
 3. 文档1中提供的实验配置可用于超参数搜索
